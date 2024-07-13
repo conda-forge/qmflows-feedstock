@@ -1,5 +1,5 @@
 {% set name = "qmflows" %}
-{% set version = "0.12.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qmflows-{{ version }}.tar.gz
-  sha256: bf5bcd74f6c2afe96d225a2b616c4760f7e5a4278ea230a63e5c6047af325f2f
+  sha256: c4b3ba80345d7cb921b582d27c2597caa27d4890067be74de103dec15f9ed5a5
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -23,11 +23,11 @@ requirements:
     - h5py
     - more-itertools
     - noodles >=0.3.3
-    - numpy
+    - numpy >=1.21,<2
     - packaging >=1.16.8
     - pandas
-    - plams >=1.5.1
-    - pyparsing !=3.0.0
+    - plams ==1.5.1
+    - pyparsing !=3.0.0,<3.1.0
     - python >=3.6
     - pyyaml >=5.1
 
